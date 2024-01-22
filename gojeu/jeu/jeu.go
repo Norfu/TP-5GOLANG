@@ -10,7 +10,7 @@ type Jeu struct {
 	Personnages []personnage.IPersonnage
 }
 
-func (j Jeu) Init() {
+func (j *Jeu) Init() {
 	j.Carte = types.NewCarte(1000, 1000)
 
 	aragorn, _ := personnage.GetPersonnage("chevalier")
@@ -23,8 +23,7 @@ func (j Jeu) Init() {
 
 }
 
-func (j Jeu) Play() {
+func (j *Jeu) Play() {
 	j.Init()
-	//Marche pas
 	j.Personnages[0].Attaquer(j.Personnages[1])
 }
